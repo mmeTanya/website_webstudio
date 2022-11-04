@@ -50,9 +50,9 @@ const Projects = () => {
     <section className={s.projects}>
       <div className="container">
         <h1 className={s.projects__title}>Our projects</h1>
-        <ul>
+        <ul className={s.projects_menu}>
           {
-            categories.map(category => (<li><Button theme={category.active ? 'blue' : 'white'} onClick={filter} type={'button'} text={category.name} active={category.active} /></li>))}
+            categories.map(category => (<li key={category.id} className={s.projects_menu_item}><Button theme={category.active ? 'blue' : 'white'} onClick={filter} type={'button'} text={category.name} active={category.active} /></li>))}
         </ul>
         <ul className={s.projects__list}>
           {filtredProjects &&
