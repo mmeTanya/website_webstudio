@@ -1,15 +1,12 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../components/header'
-import Hero from '../components/hero'
-import Qualities from '../components/qualities'
-import Work from '../components/work'
-import Team from '../components/team'
-import Clients from '../components/clients'
+import Head from 'next/head'
 import Footer from '../components/footer'
+import Projects from '../components/projects'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Portfolio: NextPage = () => {
   return (
     <div >
       <Head>
@@ -22,19 +19,15 @@ const Home: NextPage = () => {
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
       </Head>
-      <Header/>
+      <Header />
       <main>
-      <Hero/>
-      <Qualities/>
-      <Work/>
-      <Team/>
-      <Clients/>
+        <Projects />
       </main>
       <footer>
-      <Footer/>
+        <Footer />
       </footer>
     </div>
   )
 }
 
-export default Home
+export default Portfolio

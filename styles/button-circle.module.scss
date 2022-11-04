@@ -1,0 +1,26 @@
+%button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.close {
+  @extend %button;
+  background-image:
+    url("../public/close.svg");
+
+  &:hover,
+  &:focus {
+    background-color: rgb(24, 81, 128);
+  }
+}
