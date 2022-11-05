@@ -1,5 +1,5 @@
 .form_field {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 
 .form_info__label {
@@ -18,7 +18,7 @@
   &__input {
     box-sizing: border-box;
     width: 100%;
-    height: 40px;
+    height: 35px;
     padding-left: 42px;
     border: 2px solid #757575;
     border-radius: 4px;
@@ -26,10 +26,28 @@
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  &__icon_name {
+    @extend %input_group_absolute__icon;
+    background-image:
+      url("../public/person.svg");
+  }
+
+  &__icon_phone {
+    @extend %input_group_absolute__icon;
+    background-image:
+      url("../public/phoneForm.svg");
+  }
+
+  &__icon_mail {
+    @extend %input_group_absolute__icon;
+    background-image:
+      url("../public/emailForm.svg");
+  }
+
   &__input_red {
     box-sizing: border-box;
     width: 100%;
-    height: 40px;
+    height: 35px;
     padding-left: 42px;
     border: 2px solid red;
     border-radius: 4px;
@@ -37,29 +55,21 @@
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &__icon {
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    fill: #212121;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  &__input:hover+&__icon,
-  &__input:focus+&__icon {
+  /* &__input:hover+&__icon_name,
+  &__input:focus+&__icon_name {
     fill: #2196f3;
-  }
+  } */
 }
 
 .comments_field {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form_info__comments {
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: 120px;
+  height: 110px;
   padding: 12px 16px;
   border: 2px solid #757575;
   border-radius: 4px;
@@ -79,7 +89,7 @@
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: 120px;
+  height: 110px;
   padding: 12px 16px;
   border: 2px solid red;
   border-radius: 4px;
@@ -95,7 +105,7 @@
 }
 
 .checkbox_field {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .form_info__label_agree {
@@ -116,8 +126,7 @@
 }
 
 .form_info__icon_agree {
-  display: inline-block;
-  width: 16px;
+  width: 15px;
   height: 15px;
   margin-right: 5px;
 
@@ -131,7 +140,7 @@
 .form_info__checkbox:checked+.form_info__icon_agree {
   border-color: transparent;
   background-color: #2196f3;
-  background-image: url('../public/close.svg');
+  background-image: url('../public/agree.svg');
   background-size: contain;
   background-origin: border-box;
 }
@@ -139,7 +148,7 @@
 .form_info__text_agree {
   color: #757575;
 
-  font-size: 12px;
+  font-size: 7px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
@@ -153,24 +162,29 @@
 
   .form_info__label,
   .form_info__text_agree {
-    font-size: 14px;
+    font-size: 12px;
   }
-
-  /* .input_group_absolute__input,
-  .form_info__comments {
-    width: 448px;
-  } */
 }
 
-.button{
-  margin: 30px 0 0;
+.button {
+  text-align: center;
 }
 
 .error {
   color: red;
-  font-size: 12px;
+  font-size: 9px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 
   display: block;
+}
+
+%input_group_absolute__icon {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  fill: #2196f3;
 }

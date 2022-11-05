@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from 'next/image'
 import { useRouter } from "next/router";
 import s from "../styles/header.module.scss";
 import logo from "../styles/logo.module.scss";
@@ -41,14 +40,15 @@ const Menu = () => {
       </nav>
       <ul className={s.contact}>
         <li className={s.contact__item}>
-          <a href="mailto:info@devstudio.com" className={s.contact__link}>
-           <Image src="/envelope.svg" alt="envelope" width="16" height="12"  />
+          <a href="mailto:info@devstudio.com" className={s.contact__link_mail}>
+            <span className={s.contact__icon_mail}></span>
             <span className={s.contact__text}>info@devstudio.com</span>
+
           </a>
         </li>
         <li className={s.contact__item}>
-          <a href="tel:+380961111111" className={s.contact__link}>
-          <Image src="/smartphone.svg" alt="smartphone" width="10" height="16"  className={s.contact__icon} />
+          <a href="tel:+380961111111" className={s.contact__link_phone}>
+            <span className={s.contact__icon_phone}></span>
             <span className={s.contact__text}>+38 096 111 11 11</span>
           </a>
         </li>

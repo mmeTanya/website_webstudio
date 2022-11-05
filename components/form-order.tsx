@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Button from "../components/button";
-import ButtonCircle from "../components/button-circle";
 import s from "../styles/form-order.module.scss";
 
 
@@ -9,19 +8,23 @@ const Form = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [comments, setComments] = useState('');
+  const [agree, setAgree] = useState(false);
   const [errorsSubmit, setErrorsSubmit] = useState({
     name: '',
     email: '',
     phone: '',
-    comments: ''
+    comments: '',
+    agree: ''
   });
 
-  const handleChange = ({ target: { name, value } }) => {
+
+  const handleChange = ({ target: { name, value, checked } }) => {
     setErrorsSubmit({
       name: '',
       email: '',
       phone: '',
-      comments: ''
+      comments: '',
+      agree: ''
     });
     switch (name) {
       case 'name':
@@ -32,10 +35,13 @@ const Form = ({ onClose }) => {
         return setPhone(value);
       case 'comments':
         return setComments(value);
+      case 'agree':
+        return setAgree(checked);
       default:
         return;
     }
   }
+
   const regexName = /^[a-z ,.'-]+$/i
   const regexEmail = /^\w([\.-]?\w+)*(\@\w{1,})*(\.\w{2,})$/;
   const regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
@@ -44,7 +50,8 @@ const Form = ({ onClose }) => {
     setName('');
     setEmail('');
     setPhone('');
-    setComments('')
+    setComments('');
+    setAgree(false)
   };
 
   const handleSubmit = async (e) => {
@@ -99,13 +106,19 @@ const Form = ({ onClose }) => {
         comments: 'required'
       }));
     }
+    if (agree === false) {
+      setErrorsSubmit(prevState => ({
+        ...prevState,
+        agree: 'required'
+      }));
+    }
     console.log(errorsSubmit)
     if (name === '' ||
       !regexName.test(name) ||
       email === '' ||
-      !regexEmail.test(email) || 
-      phone === ''|| !regexPhone.test(phone)
-      || comments === '') {
+      !regexEmail.test(email) ||
+      phone === '' || !regexPhone.test(phone)
+      || comments === '' || agree === false) {
       return
     }
 
@@ -115,8 +128,8 @@ const Form = ({ onClose }) => {
       mode: 'cors'
     })
     const result = await response.json()
-    alert('Thank you ! ')
     reset()
+    alert('Thank you ! ')
     onClose()
   }
 
@@ -136,13 +149,7 @@ const Form = ({ onClose }) => {
             value={name}
             onChange={handleChange}
           />
-          <svg
-            className={s.input_group_absolute__icon}
-            width="12"
-            height="12"
-          >
-            <use href="./images/icons.svg#icon-name"></use>
-          </svg>
+          <span className={s.input_group_absolute__icon_name}></span>
         </div>
         {errorsSubmit.name === 'required' && <p className={s.error}>Name is required</p>}
         {errorsSubmit.name === 'wrong' && <p className={s.error}>Wrong name</p>}
@@ -160,13 +167,7 @@ const Form = ({ onClose }) => {
             value={phone}
             onChange={handleChange}
           />
-          <svg
-            className={s.input_group_absolute__icon}
-            width="13"
-            height="13"
-          >
-            <use href="./images/icons.svg#icon-phone"></use>
-          </svg>
+          <span className={s.input_group_absolute__icon_phone}></span>
         </div>
         {errorsSubmit.phone === 'required' && <p className={s.error}>Phone is required</p>}
         {errorsSubmit.phone === 'wrong' && <p className={s.error}>Wrong phone</p>}
@@ -184,13 +185,7 @@ const Form = ({ onClose }) => {
             value={email}
             onChange={handleChange}
           />
-          <svg
-            className={s.input_group_absolute__icon}
-            width="15"
-            height="12"
-          >
-            <use href="./images/icons.svg#icon-mail"></use>
-          </svg>
+          <span className={s.input_group_absolute__icon_mail}></span>
         </div>
         {errorsSubmit.email === 'required' && <p className={s.error}>Email is required</p>}
         {errorsSubmit.email === 'wrong' && <p className={s.error}>Wrong email</p>}
@@ -216,6 +211,8 @@ const Form = ({ onClose }) => {
             className={s.form_info__checkbox}
             type="checkbox"
             name="agree"
+            checked={agree}
+            onChange={handleChange}
           />
           <span className={s.form_info__icon_agree}></span>
           <span className={s.form_info__text_agree}>
@@ -226,7 +223,9 @@ const Form = ({ onClose }) => {
           </span>
         </label>
       </div>
-      <Button theme={'blue'} className={s.button} type={'submit'} text={'Send'} />
+      <div className={s.button}>
+        <Button theme={'blue'} type={'submit'} text={'Send'} />
+      </div>
     </form>
   );
 };

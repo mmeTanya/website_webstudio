@@ -1,14 +1,14 @@
 import s from '/styles/button.module.scss';
 
-let   className=''
+let className = ''
 const getStyledButton = theme => {
   switch (theme) {
     case 'blue':
       className = s.blue
-      return 
+      return
     case 'white':
       className = s.white
-      
+
     default:
       return {};
   }

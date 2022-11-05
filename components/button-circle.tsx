@@ -1,14 +1,14 @@
 import s from '/styles/button-circle.module.scss';
 
-let   className=''
+let className = ''
 const getStyledButton = theme => {
   switch (theme) {
     case 'close':
       className = s.close
-      return 
-    case 'white':
-      className = s.white
-      
+      return
+    case 'menu':
+      className = s.menu
+
     default:
       return {};
   }

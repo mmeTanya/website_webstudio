@@ -17,13 +17,11 @@ const Work = () => {
           {works.map(work =>
           (
             <li className={s.work__item} key={work.id}>
-              <a href="" className={s.work__link}>
-                <Image src={work.picture} alt={work.alt}
-               width={370} height={294} className={s.work__image}/>
-                <div className={s.work__overlay}>
-                  <p className={s.work__name}>{work.title}</p>
-                </div>
-              </a>
+              <Image src={work.picture} alt={work.alt}
+                width={370} height={294} className={s.work__image} />
+              <div className={s.work__overlay}>
+                <p className={s.work__name}>{work.title}</p>
+              </div>
             </li>
           )
           )}

@@ -7,7 +7,8 @@
 
   &__list {
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
+    justify-content: flex-start;
   }
 
   &__item {
@@ -51,9 +52,11 @@
     padding: 20px 24px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-top: none;
+    text-align: center;
 
     @media screen and (min-width: 768px) {
       flex-grow: 1;
+      text-align: start;
     }
 
     @media screen and (max-width: 1200px) {
@@ -112,21 +115,35 @@
   }
 }
 
+.projects_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+
+
+  &__item {
+    margin: 0 0 12px;
+  }
+}
+
 @media screen and (min-width: 768px) {
 
   .projects_menu {
     flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: center;
-  margin-bottom: 25px;
+    margin-bottom: 50px;
 
-  &__item {
-    margin: 0 8px 15px 0;
-  }
-    
+    &__item {
+      margin: 0 8px 15px 0;
+    }
+
   }
 
   .projects {
+
 
     &__list {
       display: flex;
@@ -143,12 +160,10 @@
 
 @media screen and (min-width: 1200px) {
 
-  .projects_menu {
-    margin-bottom: 50px;
-  }
 
   .projects {
-    padding: 94px 0;
+    padding: 70px 0;
+
 
     &__item {
       margin: 15px 0 0 15px;
@@ -162,17 +177,5 @@
         margin-right: 15px;
       }
     }
-  }
-}
-
-.projects_menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
-
-  &__item {
-    margin: 0 0 12px ;
   }
 }

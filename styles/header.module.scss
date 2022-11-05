@@ -34,12 +34,42 @@
   }
 
   &__text {
-    margin-left: 10px;
+    margin-left: 5px;
   }
 
-  &__link {
+  &__link_mail {
     color: #757575;
-    fill: #2196f3;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+
+    display: flex;
+    align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: #2196f3;
+    }
+
+  }
+
+  &__icon_mail {
+    display: block;
+    width: 16px;
+    height: 12px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image:
+      url("../public/envelope.svg");
+  }
+
+
+  &__link_phone {
+    color: #757575;
 
     font-weight: 500;
     font-size: 14px;
@@ -55,7 +85,32 @@
       color: #2196f3;
     }
   }
+
+  &__icon_phone {
+    display: block;
+    width: 10px;
+    height: 16px;
+    margin-right: 3px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image:
+      url("../public/smartphone.svg");
+  }
+
+  &__link_mail:hover>&__icon_mail,
+  &__link_mail:focus>&__icon_mail {
+    background-image:
+      url("../public/envelope_hover.svg")
+  }
+
+  &__link_phone:hover>&__icon_phone,
+  &__link_phone:focus>&__icon_phone {
+    background-image:
+      url("../public/smartphone_hover.svg")
+  }
 }
+
 
 .nav {
   display: flex;

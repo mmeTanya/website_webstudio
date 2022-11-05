@@ -9,22 +9,22 @@ const Clients = () => {
         <h2 className={s.clients__title}>OUR CLIENTS</h2>
         <ul className={s.clients__list}>
           <li className={s.clients__item}>
-            <a href="" className={s.clients__client1} />
+            <a href="https://www.inc.com/karen-tiber-leland/how-to-find-clients-you-honestly-like-working-with.html" className={s.clients__client1} />
           </li>
           <li className={s.clients__item}>
-            <a href="" className={s.clients__client2}/>
+            <a href="https://www.inc.com/karen-tiber-leland/how-to-find-clients-you-honestly-like-working-with.html" className={s.clients__client2} />
           </li>
           <li className={s.clients__item}>
-            <a href="" className={s.clients__client3} />
+            <a href="https://www.inc.com/karen-tiber-leland/how-to-find-clients-you-honestly-like-working-with.html" className={s.clients__client3} />
           </li>
           <li className={s.clients__item}>
-            <a href="" className={s.clients__client4} />
+            <a href="https://www.inc.com/karen-tiber-leland/how-to-find-clients-you-honestly-like-working-with.html" className={s.clients__client4} />
           </li>
           <li className={s.clients__item}>
-            <a href="" className={s.clients__client5} />
+            <a href="https://www.inc.com/karen-tiber-leland/how-to-find-clients-you-honestly-like-working-with.html" className={s.clients__client5} />
           </li>
           <li className={s.clients__item}>
-            <a href="" className={s.clients__client6} />
+            <a href="https://www.inc.com/karen-tiber-leland/how-to-find-clients-you-honestly-like-working-with.html" className={s.clients__client6} />
           </li>
         </ul>
       </div>

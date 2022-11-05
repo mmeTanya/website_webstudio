@@ -30,36 +30,72 @@
     @extend %clients__link;
     background-image:
       url("../public/client1.svg");
+
+    &:hover,
+    &:focus {
+      background-image:
+        url("../public/client1_hover.svg");
+    }
   }
 
   &__client2 {
     @extend %clients__link;
     background-image:
       url("../public/client2.svg");
+
+    &:hover,
+    &:focus {
+      background-image:
+        url("../public/client2_hover.svg");
+    }
   }
 
   &__client3 {
     @extend %clients__link;
     background-image:
       url("../public/client3.svg");
+
+    &:hover,
+    &:focus {
+      background-image:
+        url("../public/client3_hover.svg");
+    }
   }
 
   &__client4 {
     @extend %clients__link;
     background-image:
       url("../public/client4.svg");
+
+    &:hover,
+    &:focus {
+      background-image:
+        url("../public/client4_hover.svg");
+    }
   }
 
   &__client5 {
     @extend %clients__link;
     background-image:
       url("../public/client5.svg");
+
+    &:hover,
+    &:focus {
+      background-image:
+        url("../public/client5_hover.svg");
+    }
   }
 
   &__client6 {
     @extend %clients__link;
     background-image:
       url("../public/client6.svg");
+
+    &:hover,
+    &:focus {
+      background-image:
+        url("../public/client6_hover.svg");
+    }
   }
 }
 

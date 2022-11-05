@@ -1,17 +1,16 @@
 %button {
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 15px;
+  top: 15px;
   width: 30px;
   height: 30px;
   background-color: white;
   border: 1px solid black;
   border-radius: 50%;
   cursor: pointer;
-  background-size:auto;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 .close {
@@ -21,6 +20,21 @@
 
   &:hover,
   &:focus {
-    background-color: rgb(24, 81, 128);
+    border: 1px solid #2196f3;
+    background-image:
+      url("../public/close_hover.svg");
+  }
+}
+
+.menu {
+  @extend %button;
+  border: none;
+  background-image:
+    url("../public/menu.svg");
+
+  &:hover,
+  &:focus {
+    background-image:
+      url("../public/menu_hover.svg");
   }
 }

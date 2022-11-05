@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import ClientOnlyPortal from './clientOnlyPortal'
 import Button from "../components/button";
@@ -24,7 +23,7 @@ const Hero = () => {
           <h1 className={s.hero__title}>
             EFFECTIVE SOLUTIONS  <br /> FOR YOUR BUSINESS
           </h1>
-          <Button theme={'blue'} className={s.button} onClick={handleOpenModal} type={'button'} text={'Order service'} />
+          <Button theme={'blue'} onClick={handleOpenModal} type={'button'} text={'Order service'} />
           {showModal && <ClientOnlyPortal selector="#modal"><Modal onClose={handleCloseModal} /></ClientOnlyPortal>}
         </div>
       </div>

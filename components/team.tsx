@@ -21,7 +21,7 @@ const Team = () => {
       <div className="container">
         <h2 className={s.team__title}>Our team</h2>
         <ul className={s.team__list}>
-          {
+          {team &&
             team.map(member => (
               <li className={s.team__item} key={member._id}>
                 <img src={member.photo} alt={member.name}
