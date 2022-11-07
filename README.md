@@ -2,4 +2,4 @@ Web site of WebStudio which provides web design and development services that ar
 
 For development it have been used:
 
-[image](https://user-images.githubusercontent.com/87328973/200309858-6f136ffa-94c4-4a2e-b5da-9b3d1941fff8.png), SCSS, Webpack, Next.js, Rest API, MongoDB, Cloudinary, responsible web markup
+https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png, SCSS, Webpack, Next.js, Rest API, MongoDB, Cloudinary, responsible web markup
