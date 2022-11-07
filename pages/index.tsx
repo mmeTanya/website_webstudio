@@ -1,12 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Footer from '../components/footer'
+import { ToastContainer } from 'react-toastify';
 import Header from '../components/header'
 import Hero from '../components/hero'
 import Qualities from '../components/qualities'
 import Work from '../components/work'
 import Team from '../components/team'
 import Clients from '../components/clients'
-import Footer from '../components/footer'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +24,7 @@ const Home: NextPage = () => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
       </Head>
       <Header />
+      <ToastContainer autoClose={3000} />
       <main>
         <Hero />
         <Qualities />

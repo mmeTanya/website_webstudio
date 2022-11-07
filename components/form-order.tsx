@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import Button from "../components/button";
 import s from "../styles/form-order.module.scss";
 
@@ -129,7 +130,7 @@ const Form = ({ onClose }) => {
     })
     const result = await response.json()
     reset()
-    alert('Thank you ! ')
+    toast('Thank you !');
     onClose()
   }
 

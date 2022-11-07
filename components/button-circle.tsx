@@ -1,7 +1,7 @@
 import s from '/styles/button-circle.module.scss';
 
 let className = ''
-const getStyledButton = theme => {
+const getStyledButton = (theme: any) => {
   switch (theme) {
     case 'close':
       className = s.close
